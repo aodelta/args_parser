@@ -40,7 +40,7 @@ namespace args_parser {
         Arg arg(name, alias, data);
         
         for(int i(1); i < intern::argc; i++) { // For each argument passed
-#if !defined(DASH_ALLOWED)
+#if !defined(ARGS_PARSER_DASH_NOT_REQUIRED)
             if(strncmp(intern::argv[i], "-", 1) == 0) continue;
 #endif
             match = false;

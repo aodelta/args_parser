@@ -40,7 +40,7 @@ namespace args_parser {
                         if(i >= intern::argc) // last argument
                             return Error { EErrors::NO_DATA_FOLLOWING, i}; // Limits reached
                         else {
-#if !defined(DASH_ALLOWED)
+#if !defined(ARGS_PARSER_DASH_NOT_REQUIRED)
                             if(strncmp(intern::argv[i+1], "-", 1) == 0) {
                                 return Error(EErrors::NO_DATA_FOLLOWING, i); // Data expected, but found another argument
                             }
